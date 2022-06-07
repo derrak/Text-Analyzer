@@ -30,13 +30,9 @@ function numberOfOccurrencesInText(searchWord, textWeWantToSearch) {
     });
     return wordCount;
   }
-
-
 // let searchWord = "RED";
 // let textWeWantToSearch = "Red! Red. I like red, don't you?";
 // numberOfOccurrencesInText(searchWord,textWeWantToSearch);
-
-let array = ["biffaroni", "zoinks", "muppeteer", "loopdaloop"];
 
 function removeBadWords(textWeWantToSearch){
   const wordArray = textWeWantToSearch.split(" "); //created array from textWeWantToSearch
@@ -57,11 +53,22 @@ function removeBadWords(textWeWantToSearch){
     }
   });
   return wordArray.join(" ");
-
-
 }
 
-let textWeWantToSearch = "this is a bad word: biffaroni it has been deleted zoinks muppeteer loopdaloop";
-removeBadWords(textWeWantToSearch);
+// let textWeWantToSearch = "this is a bad word: biffaroni it has been deleted zoinks muppeteer loopdaloop";
+// removeBadWords(textWeWantToSearch);
 
 
+// UI Logic
+
+$(document).ready(function(){
+  $("form#word-counter").submit(function(event){
+    event.preventDefault();
+    const passage = $("#text-passage").val();
+    const word = $("#word").val();
+    const wordCount = wordCounter(passage);
+    const occurrencesOfWord = numberOfOccurrencesInText(word, passage);
+    $("#total-count").html(wordCount);
+    $("#selected-count").html(occurrencesOfWord);
+  });
+});
