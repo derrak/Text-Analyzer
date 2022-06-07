@@ -1,7 +1,5 @@
 // Business Logic
 
-
-
 function wordCounter(text) {
   if (text.trim().length === 0) {
     return 0;
@@ -37,4 +35,33 @@ function numberOfOccurrencesInText(searchWord, textWeWantToSearch) {
 // let searchWord = "RED";
 // let textWeWantToSearch = "Red! Red. I like red, don't you?";
 // numberOfOccurrencesInText(searchWord,textWeWantToSearch);
+
+let array = ["biffaroni", "zoinks", "muppeteer", "loopdaloop"];
+
+function removeBadWords(textWeWantToSearch){
+  const wordArray = textWeWantToSearch.split(" "); //created array from textWeWantToSearch
+  let arrayPostitionCounter = 0;
+  wordArray.forEach(function(element){
+    arrayPostitionCounter++;
+    if ("biffaroni" === element){
+      wordArray[arrayPostitionCounter-1] = "beep";
+    }
+    else if ("zoinks" === element){
+      wordArray[arrayPostitionCounter-1] = "beep";
+    }
+    else if ("muppeteer" === element){
+      wordArray[arrayPostitionCounter-1] = "beep";
+    }
+    else if("loopdaloop" === element) {
+      wordArray[arrayPostitionCounter -1] = "beep";
+    }
+  });
+  return wordArray.join(" ");
+
+
+}
+
+let textWeWantToSearch = "this is a bad word: biffaroni it has been deleted zoinks muppeteer loopdaloop";
+removeBadWords(textWeWantToSearch);
+
 

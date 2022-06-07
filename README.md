@@ -91,12 +91,35 @@ const word = "Red";
 numberOfOccurrencesInText(word, text);
 Expected Output: 3
 
+###Describe: removeBadWords()
 
+Test: "It should return 0 occurrences of a word for an empty string."
+Code:
+const text = "";
+const word = "biffaroni";
+numberOfOccurrencesInText(word, text);
+Expected Output: 0
 
+Test: "It should return 1 occurrences of a word when the strings match."
+Code:
+const text = "biffaroni";
+const word = "biffaroni";
+numberOfOccurrencesInText(word, text);
+Expected Output: 1
 
+Test: "It should replace biffaroni with "beep" in an array"
+Code:
+const text = "biffaroni";
+const word = "biffaroni";
+numberOfOccurrencesInText(word, text);
+Expected Output: "beep"
 
-
-
+Test: "It should replace multiple bad words with "beep" in an array"
+Code:
+const text = "this is a bad word: biffaroni it has been deleted zoinks muppeteer loopdaloop"
+const word = _All four bad words, in if/else statements
+numberOfOccurrencesInText(word, text);
+Expected Output: "this is a bad word: beep it has been deleted beep beep beep"
 
 
 
